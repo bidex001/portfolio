@@ -1,26 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=Lilex:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+:root,
+html {
+  color-scheme: light;
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --surface-2: #eef2ff;
+  --text: #0f172a;
+  --text-strong: #0f172a;
+  --muted: #475569;
+  --border: #e2e8f0;
+  --accent: #7c3aed;
+  --accent-strong: #8b5cf6;
+  --accent-contrast: #f8fafc;
+  --shadow: 0 14px 50px rgba(0, 0, 0, 0.08);
+  --scroll-thumb-start: #7c3aed;
+  --scroll-thumb-end: #f3f4f6; /* gray-100 */
+  --scroll-track-start: #7c3aed;
+  --scroll-track-end: #f3f4f6; /* gray-100 */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root.dark,
+html.dark,
+body.dark,
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0f172a;
+  --surface: #111827;
+  --surface-2: #1f2937;
+  --text: #e5e7eb;
+  --text-strong: #ffffff;
+  --muted: #9ca3af;
+  --border: #1f2937;
+  --accent: #7c3aed;
+  --accent-strong: #a78bfa;
+  --accent-contrast: #f8fafc;
+  --shadow: 0 14px 50px rgba(0, 0, 0, 0.42);
+  --scroll-thumb-start: #7c3aed;
+  --scroll-thumb-end: #1f2937; /* gray-800 */
+  --scroll-track-start: #7c3aed;
+  --scroll-track-end: #1f2937; /* gray-800 */
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background-color 200ms ease, color 200ms ease;
+  scrollbar-gutter: stable both-edges;
+  padding-inline: 16px;
+  padding-inline-end: 28px; /* extra space to separate content from scrollbar */
+}
+
+@media (min-width: 1024px) {
+  body {
+    padding-inline: 24px;
+    padding-inline-end: 36px;
+  }
+}
+
+/* Gradient scrollbar: purple to gray-800 */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: var(--scroll-thumb-start) var(--scroll-track-end);
+}
+
+*::-webkit-scrollbar {
+  width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+  background: linear-gradient(
+    180deg,
+    var(--scroll-track-start),
+    var(--scroll-track-end)
+  );
+}
+
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    var(--scroll-thumb-start),
+    var(--scroll-thumb-end)
+  );
+  border-radius: 999px;
+  border: 2px solid var(--bg);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    var(--accent-strong),
+    var(--scroll-thumb-end)
+  );
+}
+
+h1 {
+  font-family: "Lilex", var(--font-montserrat), system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-heading:not(h1) {
+  font-family: var(--font-montserrat), system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.font-body {
+  font-family: var(--font-poppins), system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+.vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  transform-origin: center;
+}
+
+@media (max-width: 1280px) {
+  .vertoppo {
+    writing-mode: horizontal-tb;
+    text-orientation: mixed;
+    transform: none;
+  }
+}
+
+.vertical:hover {
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.dance {
+  display: inline-block;
+  transform-origin: center;
+}
+
+.dance:hover {
+  animation: dance-wiggle 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes dance-wiggle {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.08) rotate(-4deg);
+  }
+  50% {
+    transform: scale(1.12) rotate(4deg);
+  }
+  75% {
+    transform: scale(1.08) rotate(-3deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+.p-text {
+  @apply text-gray-600;
+}
+.p-text span {
+  font-weight: 600;
+  color: var(--text-strong);
+}
+
+.bounce{
+   display: inline-block;
+  transform-origin: center;
+}
+.bounce:hover {
+  animation: bounce-up 0.4s ease-in-out infinite alternate;
+}
+
+@keyframes bounce-up {
+  0% {
+    transform: translateY(0);
+  }
+  25%{
+    transform: scaleX(1.2) scaleY(0.8);
+  }
+  50% {
+    transform:scaleX(1.5) scaleY(0.5);
+  }
+  75%{
+    transform: scaleX(1.2) scaleY(0.8);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }

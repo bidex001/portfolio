@@ -234,12 +234,18 @@ const projectArray = [
               I am excited to bring my knowledge and experience to a team and
               contribute to a {`company`}s success.
             </p>
-            <div className="relative mt-0 *:cursor-pointer group">
+           <a
+            href="/Adebayo_Bidemi_Fullstack_Developer_CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+              <div className="relative mt-0 *:cursor-pointer group">
               <div className=" w-[150px] h-[50px] border-2 border-[var(--border)] absolute font-body top-[9] left-[9] group-hover:top-0 group-hover:left-0 transition-all duration-700 z-0"></div>
               <button className="w-[150px] h-[50px] bg-[var(--accent)] hover:bg-[var(--accent-strong)] text-[var(--accent-contrast)] capitalize cursor-pointer transition-colors duration-200 shadow-[var(--shadow)] relative z-50">
                 view resume
               </button>
             </div>
+           </a>
           </div>
 
           <div className="  w-[500px] max-lg:w-full  flex flex-col gap-7 items-center justify-center">
@@ -277,12 +283,18 @@ const projectArray = [
                 <p className=" text-sm">
                   <span className="text-gray-500">Here are some of the</span> tools <span className="text-gray-500">{"i've"} worked with over the years, for my</span> personal, professional <span className="text-gray-500">and</span> open source <span className="text-gray-500">projects</span>
                 </p>
-             <div className="relative mt-0 *:cursor-pointer group">
+          <a
+            href="/Adebayo_Bidemi_Fullstack_Developer_CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+              <div className="relative mt-0 *:cursor-pointer group">
               <div className=" w-[150px] h-[50px] border-2 border-[var(--border)] absolute font-body top-[9] left-[9] group-hover:top-0 group-hover:left-0 transition-all duration-700 z-0"></div>
               <button className="w-[150px] h-[50px] bg-[var(--accent)] hover:bg-[var(--accent-strong)] text-[var(--accent-contrast)] capitalize cursor-pointer transition-colors duration-200 shadow-[var(--shadow)] relative z-50">
                 view resume
               </button>
             </div>
+           </a>
           </div>
 
           <div className=" w-[350px] h-[500px] max-lg:w-[500px] max-sm:w-[350px] *:shrink-0  flex flex-wrap gap-5 justify-center items-center">
@@ -441,4 +453,3 @@ const projectArray = [
 };
 
 export default Main;
-

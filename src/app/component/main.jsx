@@ -5,7 +5,7 @@ import Image from "next/image";
 import { FaEye } from "react-icons/fa";
 import axios from "axios";
 
-const Main = ({about,setAbout,contact,setContact,project,setProject,skills,setSkills}) => {
+const Main = ({about, contact, project, skills}) => {
   const [showName, setShowName] = useState(true);
   const [success,setSuccess] = useState(false);
   const [data,setData] = useState({

@@ -195,12 +195,12 @@ const projectArray = [
     code:"https://github.com/bidex001/Ecommerce-web-app"
   },
   {
-    name:"course management stylying",
-    description:"A course management web application that allows users to view and manage courses. Built with React for the frontend and styled with Tailwind CSS.",
-    image:"/images/school.png",
-    tools:"html + css",
-    link:"https://victory-page.vercel.app/",
-    code:"https://github.com/bidex001/victory-page"
+    name:"mortgage calculator",
+    description:"A mortgage calculator that helps users estimate their monthly mortgage payments based on loan amount, interest rate, and loan term. Built with React for the frontend.", 
+    image:"/images/mortgage.png",
+    tools:"next.js + tailwindcss + javascript",
+    link:"https://mortgage-calc-main-5slg-git-main-adebayos-projects-41c56e43.verc",
+    code:"https://github.com/bidex001/mortgage-calc-main"
   }
 ]
 

@@ -199,7 +199,7 @@ const projectArray = [
     description:"A mortgage calculator that helps users estimate their monthly mortgage payments based on loan amount, interest rate, and loan term. Built with React for the frontend.", 
     image:"/images/mortgage.png",
     tools:"next.js + tailwindcss + javascript",
-    link:"https://mortgage-calc-main-5slg-git-main-adebayos-projects-41c56e43.verc",
+    link:"https://mortgage-calc-main-5slg-git-main-adebayos-projects-41c56e43.vercel.app/",
     code:"https://github.com/bidex001/mortgage-calc-main"
   }
 ]

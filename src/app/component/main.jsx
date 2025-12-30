@@ -201,6 +201,14 @@ const projectArray = [
     tools:"next.js + tailwindcss + javascript",
     link:"https://mortgage-calc-main-5slg-git-main-adebayos-projects-41c56e43.vercel.app/",
     code:"https://github.com/bidex001/mortgage-calc-main"
+  },
+  {
+    name:'space website',
+    description:"A space-themed website that provides information about planets, stars, and other celestial bodies. Built with React for the frontend.",
+    image:"/images/space.png",
+    tools:"next.js + tailwindcss + javascript",
+    link:"https://space-website-1xwe-git-main-adebayos-projects-41c56e43.vercel.app/",
+    code:"https://github.com/bidex001/space-website"
   }
 ]
 

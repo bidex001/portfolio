@@ -230,7 +230,7 @@ const projectArray = [
 
 
   return (
-    <div className=" flex max-lg:px-6 max-lg:py-2  flex-1 overflow-hidden max-xl:w-full  justify-center items-center text-[var(--text)]">
+    <div className=" flex max-lg:px-6 max-lg:py-2 max-sm:mt-20  flex-1 overflow-hidden max-xl:w-full  justify-center items-center text-[var(--text)]">
       {about && (
         <div className=" w-[1000px] max-sm:w-full flex max-lg:flex-col-reverse items-center justify-between max-lg:gap-10 max-sm:gap-5">
           <div className=" w-[500px] max-lg:w-full max-lg:justify-center max-lg:items-center flex flex-col gap-10 max-lg:gap-5 p-4">
@@ -303,7 +303,7 @@ const projectArray = [
            </a>
           </div>
 
-          <div className=" w-[350px] h-[500px] max-lg:w-[500px] max-sm:w-[350px] max-sm:h-fit *:shrink-0  flex flex-wrap gap-5 justify-center items-center">
+          <div className=" w-[350px] h-fit max-lg:w-[500px] max-sm:w-[350px] max-sm:h-fit *:shrink-0  flex flex-wrap gap-5 justify-center items-center">
             {
               techStack.map((item, index) => {
                 return(

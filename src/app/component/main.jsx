@@ -272,7 +272,7 @@ const projectArray = [
            </a>
           </div>
 
-          <div className="flex justify-center items-center overflow-hidden border max-sm:w-full ">
+          <div className="flex justify-center items-center overflow-hidden max-sm:w-full ">
             <Image src={"/bidex.jpg"} alt="images" width={400} height={400}  className=" w-[400px] h-[400px] rounded-full object-cover"/>
           </div>
         </div>

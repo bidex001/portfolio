@@ -69,6 +69,22 @@ const Main = ({about, contact, project, skills}) => {
     image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
   },
   {
+    id: 4,
+    name: "Tailwind CSS",
+    category: "Frontend",
+    level: "Expert",
+    description: "Utility-first CSS framework for rapid UI development.",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
+  },
+  {
+    id: 11,
+    name: "python",
+    category: "Backend",
+    level: "Intermediate",
+    description: "High-level, general-purpose programming language.",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+  },
+  {
     id: 5,
     name: "React.js",
     category: "Frontend",
@@ -216,20 +232,20 @@ const projectArray = [
   return (
     <div className=" flex max-lg:px-6 max-lg:py-2  flex-1 overflow-hidden max-xl:w-full  justify-center items-center text-[var(--text)]">
       {about && (
-        <div className=" w-[1000px] max-sm:w-full flex max-lg:flex-col-reverse items-center justify-between max-lg:gap-10">
+        <div className=" w-[1000px] max-sm:w-full flex max-lg:flex-col-reverse items-center justify-between max-lg:gap-10 max-sm:gap-5">
           <div className=" w-[500px] max-lg:w-full max-lg:justify-center max-lg:items-center flex flex-col gap-10 max-lg:gap-5 p-4">
             <h1 className=" text-4xl max-sm:text-2xl  font-heading font-semibold flex flex-col gap-1 max-sm:items-start leading-tight">
               <span className=" text-[var(--muted)]  font-heading font-normal dance cursor-pointer">
                 Hello, {`I'm`}
               </span>
-              <span className=" text-[var(--accent)] dance cursor-pointer">
-                {primaryTitle}
+              <span className=" text-[var(--accent)] capitalize dance cursor-pointer">
+                adebayo bidemi.
               </span>
             </h1>
             <p className=" text-sm font-body max-lg:w-[600px] max-sm:w-full max-sm:text-xs max-lg:text-center text-[var(--muted)]">
               I am a{" "}
               <span className=" text-[var(--text)] font-semibold tracking-wider">
-                {highlightedRole}
+                fullstack developer
               </span>{" "}
               I have a strong background in creating visually appealing and{" "}
               <span className=" text-[var(--text)] font-semibold tracking-wider">
@@ -256,26 +272,8 @@ const projectArray = [
            </a>
           </div>
 
-          <div className="  w-[500px] max-lg:w-full  flex flex-col gap-7 items-center justify-center">
-            <div className="relative w-full flex justify-center items-center">
-              <div className=" w-[300px] h-[300px] border-2 border-[var(--border)] bg-[var(--surface)]"></div>
-          <div className=" w-[300px] h-[300px] absolute p-5 top-[-15px] right-20 max-lg:right-53 max-md:right-45 max-sm:right-8 flex justify-center items-center bg-[var(--accent)] *:text-[var(--accent-contrast)] shadow-[0_24px_60px_rgba(124,58,237,0.35)]">
-                <h1 className=" text-[190px] font-extrabold">{badgeLabel}</h1>
-              </div>
-            </div>
-            <div className="flex gap-10 max-sm:gap-5  w-[500px] max-lg:w-full  flex-wrap justify-center items-center">
-              {letterSet &&
-                letterSet.map((item, index) => {
-                  return (
-                    <div
-                      key={index}
-                      className=" flex px-5 py-3 max-sm:px-3 max-sm:py-2 justify-center items-center bg-[var(--surface)] border border-[var(--border)] text-[var(--text)] shadow-sm"
-                    >
-                      <p className=" text-xl max-md:text-sm font-bold uppercase">{item}</p>
-                    </div>
-                  );
-                })}
-            </div>
+          <div className=" w-[400px] max-lg:w-[400px] max-lg:h-[400px] max-sm:w-[350px] max-sm:h-[350px] h-[400px] overflow-hidden rounded-full">
+            <Image src={"/bidex.jpg"} alt="images" width={400} height={400}  className=" w-full h-full object-cover"/>
           </div>
         </div>
       )}
@@ -305,7 +303,7 @@ const projectArray = [
            </a>
           </div>
 
-          <div className=" w-[350px] h-[500px] max-lg:w-[500px] max-sm:w-[350px] *:shrink-0  flex flex-wrap gap-5 justify-center items-center">
+          <div className=" w-[350px] h-[500px] max-lg:w-[500px] max-sm:w-[350px] max-sm:h-fit *:shrink-0  flex flex-wrap gap-5 justify-center items-center">
             {
               techStack.map((item, index) => {
                 return(

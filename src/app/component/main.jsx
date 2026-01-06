@@ -207,7 +207,7 @@ const projectArray = [
     description:"A simple frontend e-commerce site built with React and Tailwind CSS. It features product listings, a shopping cart, and a checkout page.",
     image:"/images/ecommerce.png",
     tools:"next.js + tailwindcss + javascript",
-    link:"https://ecommerce-web-app-vert.vercel.app/index.html",
+    link:"https://ecommerce-web-app-vert.vercel.app/",
     code:"https://github.com/bidex001/Ecommerce-web-app"
   },
   {
@@ -215,7 +215,7 @@ const projectArray = [
     description:"A mortgage calculator that helps users estimate their monthly mortgage payments based on loan amount, interest rate, and loan term. Built with React for the frontend.", 
     image:"/images/mortgage.png",
     tools:"next.js + tailwindcss + javascript",
-    link:"https://mortgage-calc-main-5slg-git-main-adebayos-projects-41c56e43.vercel.app/",
+    link:"https://mortgage-calc-main-5slg.vercel.app/",
     code:"https://github.com/bidex001/mortgage-calc-main"
   },
   {
@@ -223,7 +223,7 @@ const projectArray = [
     description:"A space-themed website that provides information about planets, stars, and other celestial bodies. Built with React for the frontend.",
     image:"/images/space.png",
     tools:"next.js + tailwindcss + javascript",
-    link:"https://space-website-1xwe-git-main-adebayos-projects-41c56e43.vercel.app/",
+    link:"https://space-website-1xwe.vercel.app/",
     code:"https://github.com/bidex001/space-website"
   }
 ]

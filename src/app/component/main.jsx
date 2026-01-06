@@ -230,9 +230,9 @@ const projectArray = [
 
 
   return (
-    <div className=" flex max-lg:px-6 max-lg:py-2 max-sm:mt-20  flex-1 overflow-hidden max-xl:w-full  justify-center items-center text-[var(--text)]">
+    <div className=" flex max-sm:w-full max-lg:px-6 max-sm:ml-3 max-lg:py-2 max-sm:mt-20  flex-1 overflow-hidden max-xl:w-full   justify-center items-center text-[var(--text)]">
       {about && (
-        <div className=" w-[1000px] max-sm:w-full flex max-lg:flex-col-reverse items-center justify-between max-lg:gap-10 max-sm:gap-5">
+        <div className=" w-[1000px] max-sm:w-full flex max-lg:flex-col-reverse items-center max-sm:justify-center justify-between max-lg:gap-10 max-sm:gap-5">
           <div className=" w-[500px] max-lg:w-full max-lg:justify-center max-lg:items-center flex flex-col gap-10 max-lg:gap-5 p-4">
             <h1 className=" text-4xl max-sm:text-2xl  font-heading font-semibold flex flex-col gap-1 max-sm:items-start leading-tight">
               <span className=" text-[var(--muted)]  font-heading font-normal dance cursor-pointer">
@@ -272,8 +272,8 @@ const projectArray = [
            </a>
           </div>
 
-          <div className=" w-[400px] max-lg:w-[400px] max-lg:h-[400px] max-sm:w-[350px] max-sm:h-[350px] h-[400px] overflow-hidden rounded-full">
-            <Image src={"/bidex.jpg"} alt="images" width={400} height={400}  className=" w-full h-full object-cover"/>
+          <div className="flex justify-center items-center overflow-hidden border max-sm:w-full ">
+            <Image src={"/bidex.jpg"} alt="images" width={400} height={400}  className=" w-[400px] h-[400px] rounded-full object-cover"/>
           </div>
         </div>
       )}

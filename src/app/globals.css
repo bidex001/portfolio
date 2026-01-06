@@ -57,7 +57,7 @@ body {
 @media (min-width: 1024px) {
   body {
     padding-inline: 24px;
-    padding-inline-end: 36px;
+    padding-inline-end: 24px;
   }
 }
 

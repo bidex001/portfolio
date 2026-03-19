@@ -311,7 +311,7 @@ const projectArray = [
            </a>
           </div>
 
-          <div className=" w-full bg-gray-100 p-10 h-fit max-lg:w-[500px] max-sm:w-[350px] max-sm:h-fit *:shrink-0  flex flex-wrap gap-10  justify-center items-center">
+          <div className=" w-full bg-gray-100 p-10 h-fit max-lg:w-[500px] max-sm:w-[350px] max-sm:h-fit *:shrink-0  flex flex-wrap gap-10 max-sm:grid max-sm:grid-cols-2 max-sm:place-items-center max-sm:p-5 justify-center items-center">
             {
               techStack.map((item, index) => {
                 return(

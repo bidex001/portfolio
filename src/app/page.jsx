@@ -49,8 +49,10 @@ const Page = () => {
   return (
     <div className=' w-full h-screen min-h-screen max-xl:flex-col items-center flex overflow-hidden bg-[var(--bg)] text-[var(--text)] justify-between transition-colors duration-300'>
       <Header about={about} contact={contact} project={project} skills={skills} onSelectTab={switchTab} />
-      <Main about={about} contact={contact} project={project} skills={skills}/>
-      <Footer darkMode={darkMode} onToggleDark={() => setDarkMode((prev) => !prev)} />
+      <div className='flex flex-1 min-w-0 h-full items-stretch justify-between max-xl:flex-col max-xl:w-full'>
+        <Main about={about} contact={contact} project={project} skills={skills}/>
+        <Footer darkMode={darkMode} onToggleDark={() => setDarkMode((prev) => !prev)} />
+      </div>
       {loading && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-[var(--bg)]/80 backdrop-blur-sm">
           <div className="scale-110">

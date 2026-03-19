@@ -47,7 +47,7 @@ const Page = () => {
   }
 
   return (
-    <div className=' w-full h-full min-h-screen max-xl:flex-col  items-center flex bg-[var(--bg)] text-[var(--text)] justify-between transition-colors duration-300'>
+    <div className=' w-full h-screen min-h-screen max-xl:flex-col items-center flex overflow-hidden bg-[var(--bg)] text-[var(--text)] justify-between transition-colors duration-300'>
       <Header about={about} contact={contact} project={project} skills={skills} onSelectTab={switchTab} />
       <Main about={about} contact={contact} project={project} skills={skills}/>
       <Footer darkMode={darkMode} onToggleDark={() => setDarkMode((prev) => !prev)} />

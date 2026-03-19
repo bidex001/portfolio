@@ -14,7 +14,7 @@ const Footer = ({ darkMode, onToggleDark }) => {
     if (onToggleDark) onToggleDark()
   }
   return (
-    <div className=" h-screen justify-between items-center flex flex-col p-10 max-sm:px-3 text-[var(--text)] max-xl:flex-row max-xl:w-full max-xl:h-auto">
+    <div className=" h-screen flex flex-none flex-col justify-between items-center p-10 max-sm:px-3 text-[var(--text)] max-xl:flex-row max-xl:w-full max-xl:h-auto">
       <button
         onClick={handleThemeToggle}
         aria-pressed={!!darkMode}

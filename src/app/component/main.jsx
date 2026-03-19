@@ -144,6 +144,14 @@ const Main = ({about, contact, project, skills}) => {
     image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
   },
   {
+    id: 23,
+    name: "PostgreSQL",
+    category: "Database",
+    level: "Intermediate",
+    description: "Relational database for structured data.",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+  },
+  {
     id: 15,
     name: "Git & GitHub",
     category: "DevOps",
@@ -230,9 +238,9 @@ const projectArray = [
 
 
   return (
-    <div className=" flex max-sm:w-full max-lg:px-6 max-sm:ml-3 max-lg:py-2 max-sm:mt-20  flex-1 overflow-hidden max-xl:w-full   justify-center items-center text-[var(--text)]">
+    <div className=" flex h-full min-h-0 justify-center flex-1 overflow-y-auto overflow-x-hidden max-sm:w-full max-lg:px-6 max-sm:ml-3 max-lg:py-2 max-sm:mt-20 max-xl:w-full  text-[var(--text)]">
       {about && (
-        <div className=" w-[1000px] max-sm:w-full flex max-lg:flex-col-reverse items-center max-sm:justify-center justify-between max-lg:gap-10 max-sm:gap-5">
+        <div className=" w-[1000px] h-full min-h-fit max-sm:w-full flex max-lg:flex-col-reverse items-center max-sm:justify-center justify-between max-lg:gap-10 max-sm:gap-5 ">
           <div className=" w-[500px] max-lg:w-full max-lg:justify-center max-lg:items-center flex flex-col gap-10 max-lg:gap-5 p-4">
             <h1 className=" text-4xl max-sm:text-2xl  font-heading font-semibold flex flex-col gap-1 max-sm:items-start leading-tight">
               <span className=" text-[var(--muted)]  font-heading font-normal dance cursor-pointer">
@@ -259,7 +267,7 @@ const projectArray = [
               contribute to a {`company`}s success.
             </p>
            <a
-            href="/Adebayo_Bidemi_Fullstack_Developer_CV.pdf"
+            href="/Adebayo Bidemi cv.pdf"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -268,19 +276,19 @@ const projectArray = [
               <button className="w-[150px] h-[50px] bg-[var(--accent)] hover:bg-[var(--accent-strong)] text-[var(--accent-contrast)] capitalize cursor-pointer transition-colors duration-200 shadow-[var(--shadow)] relative z-50">
                 view resume
               </button>
-            </div>
+            </div>..
            </a>
           </div>
 
-          <div className="flex justify-center items-center overflow-hidden max-sm:w-full ">
-            <Image src={"/bidex.jpg"} alt="images" width={400} height={400}  className=" w-[400px] h-[400px] rounded-full object-cover"/>
+          <div className="flex max-lg:w-full justify-center items-center   max-sm:w-full ">
+            <Image src={"/bidex.jpg"} alt="images" width={400} height={400}  className=" w-[400px] h-[400px] rounded-full object-cover max-md:w-[300px] max-md:h-[300px]"/>
           </div>
         </div>
       )}
 
       {skills && (
-        <div className=" w-[1000px] justify-center items-center flex max-lg:flex-col max-lg:gap-10">
-          <div className=" w-[500px] max-sm:w-full flex flex-col gap-6">
+        <div className=" flex-1 flex-col w-full justify-start py-10 gap-15 items-center flex max-lg:flex-col max-lg:gap-10">
+          <div className=" w-full text-left max-sm:w-full flex flex-col gap-6">
             <div className=" flex flex-col gap-3 *:text-4xl *:font-bold *:max-sm:text-2xl">
               <h1 className="  text-gray-600 *:bounce "><span className="bounce">I</span> <span className="bounce">w</span><span className="bounce">o</span><span className="bounce">r</span><span className="bounce">k</span> <span className="bounce">m</span><span className="bounce">o</span><span className="bounce">s</span><span className="bounce">t</span><span className="bounce">l</span><span className="bounce">y</span> <span className="bounce">w</span><span className="bounce">i</span><span className="bounce">t</span><span className="bounce">h</span></h1>
               <h1 className="text-[var(--accent)]"><span className="bounce">F</span><span className="bounce">u</span><span className="bounce">l</span><span className="bounce">l</span><span className="bounce">s</span><span className="bounce">t</span><span className="bounce">a</span><span className="bounce">c</span><span className="bounce">k</span></h1>
@@ -290,7 +298,7 @@ const projectArray = [
                   <span className="text-gray-500">Here are some of the</span> tools <span className="text-gray-500">{"i've"} worked with over the years, for my</span> personal, professional <span className="text-gray-500">and</span> open source <span className="text-gray-500">projects</span>
                 </p>
           <a
-            href="/Adebayo_Bidemi_Fullstack_Developer_CV.pdf"
+            href="/Adebayo Bidemi cv.pdf"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -303,12 +311,12 @@ const projectArray = [
            </a>
           </div>
 
-          <div className=" w-[350px] h-fit max-lg:w-[500px] max-sm:w-[350px] max-sm:h-fit *:shrink-0  flex flex-wrap gap-5 justify-center items-center">
+          <div className=" w-full bg-gray-100 p-10 h-fit max-lg:w-[500px] max-sm:w-[350px] max-sm:h-fit *:shrink-0  flex flex-wrap gap-10  justify-center items-center">
             {
               techStack.map((item, index) => {
                 return(
-                  <div key={index} className=" flex gap-2 w-[150px] h-[50px] p-2 items-center justify-center bg-white">
-                    <Image src={item.image} alt="item" width={20} height={20}/>
+                  <div key={index} className=" flex flex-col gap-2 w-[200px] max-lg:w-[150px] max-lg:h-[100px] rounded-2xl h-[200px] hover:shadow-lg hover:scale-105 duration-300  p-2 items-center justify-center bg-white">
+                    <Image src={item.image} alt="item" width={100} height={100} className=" max-lg:w-[50px] max-lg:h-[50px]"/>
                     <h1 className=" text-black text-xs font-bold">{item.name}</h1>
                   </div>
                 )
@@ -320,8 +328,8 @@ const projectArray = [
 
       {
         project &&(
-          <div className=" w-[1000px] gap-10 flex max-lg:flex-col max-lg:w-full justify-center items-center">
-            <div className=" w-[500px] max-sm:w-full flex flex-col gap-4">
+          <div className="  py-10 px-5 flex-1 flex-col gap-10 flex max-lg:flex-col max-lg:w-full justify-start items-center">
+            <div className="  w-full text-left  flex flex-col gap-4">
               <h1 className="text-4xl max-sm:text-2xl font-semibold text-gray-600">
                 {[
                   "I"," ","l","o","v","e"," ","w","o","r","k","i","n","g"," ","o","n"," "
@@ -344,7 +352,7 @@ const projectArray = [
                   <span key={`p-${i}`} className="bounce">{char}</span>
                 ))}
               </h1>
-              <p className=" p-text text-sm">
+              <p className=" p-text text-sm w-1/2 max-sm:w-full">
                 In my leisure time, I enjoy <span>experimenting</span> with and building things that I find personally <span>interesting</span> or <span>useful</span>. A few examples of these projects can be found on my <span>GitHub page</span>, where you can also find other <span>miscellaneous creations</span> I have worked on.
               </p>
               
@@ -364,14 +372,14 @@ const projectArray = [
 
             </div>
 
-            <div className=" w-[400px] max-sm:w-full flex flex-col gap-7 items-center h-[400px] overflow-y-scroll">
+            <div className=" w-full max-lg:flex max-lg:flex-wrap  grid grid-cols-3 bg-gray-100 p-8 rounded-2xl justify-center border-red-500  items-center gap-6">
               {
                 projectArray.map((item, index) => {
                   return(
-                    <div key={index} className=" flex flex-col gap-2 mr-5">
+                    <div key={index} className=" flex flex-col gap-2 hover:shadow-lg max-lg:w-[300px] max-lg:h-[350px] shrink-0 bg-gray-50 p-5 rounded-2xl h-[400px] hover:scale-105 duration-300">
                       <Image src={item.image} alt={item.name} width={400} height={200}/>
                       <h1 className=" text-xl font-sans-serif font-bold capitalize">{item.name}</h1>
-                      <p className=" text-sm text-gray-600">{item.description}</p>
+                      <p className=" text-sm text-gray-600 line-clamp-2">{item.description}</p>
                       <p className=" text-sm italic text-gray-500">{item.tools}</p>
                       <div className=" flex gap-5">
                         <a href={item.link} target="_blank" rel="noopener noreferrer" className="flex gap-2 items-center"><span className=" text-xs"><FaEye /></span>View</a>

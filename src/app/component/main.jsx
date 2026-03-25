@@ -238,7 +238,7 @@ const projectArray = [
 
 
   return (
-    <div className=" flex h-full min-h-0 justify-center flex-1 overflow-y-auto overflow-x-hidden max-sm:w-full max-lg:px-6 max-sm:ml-3 max-lg:py-2 max-sm:mt-20 max-xl:w-full  text-[var(--text)]">
+    <div className=" flex h-full min-h-0 justify-center flex-1 overflow-y-auto overflow-x-hidden max-sm:w-full max-sm:px-0 max-lg:px-6 max-sm:ml-3 max-lg:py-2 max-sm:mt-20 max-xl:w-full  text-[var(--text)]">
       {about && (
         <div className=" w-[1000px] h-full min-h-fit max-sm:w-full flex max-lg:flex-col-reverse items-center max-sm:justify-center justify-between max-lg:gap-10 max-sm:gap-5 ">
           <div className=" w-[500px] max-lg:w-full max-lg:justify-center max-lg:items-center flex flex-col gap-10 max-lg:gap-5 p-4">
@@ -376,7 +376,7 @@ const projectArray = [
               {
                 projectArray.map((item, index) => {
                   return(
-                    <div key={index} className=" flex flex-col gap-2 hover:shadow-lg max-lg:w-[300px] max-lg:h-[350px] shrink-0 bg-gray-50 p-5 rounded-2xl h-[400px] hover:scale-105 duration-300">
+                    <div key={index} className=" flex flex-col gap-2 hover:shadow-lg max-lg:w-[300px] max-lg:h-[350px] shrink-0 bg-gray-50 p-5 rounded-2xl h-[400px] hover:scale-105 duration-300 max-sm:w-full">
                       <Image src={item.image} alt={item.name} width={400} height={200}/>
                       <h1 className=" text-xl font-sans-serif font-bold capitalize">{item.name}</h1>
                       <p className=" text-sm text-gray-600 line-clamp-2">{item.description}</p>

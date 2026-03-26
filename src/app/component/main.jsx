@@ -240,11 +240,11 @@ const formFieldClassName =
 
 
   return (
-    <div className="flex h-full min-h-0 flex-1 justify-center overflow-y-auto overflow-x-hidden text-[var(--text)] max-xl:h-auto max-xl:min-h-screen max-xl:overflow-visible max-xl:w-full max-lg:py-2 max-sm:pt-24 max-sm:pb-28">
+    <div className="flex h-full min-h-0 flex-1 justify-center overflow-y-auto overflow-x-hidden text-[var(--text)] max-xl:h-auto max-xl:min-h-screen max-xl:overflow-visible max-xl:w-full max-lg:py-2 max-sm:pt-20 max-sm:pb-24">
       {about && (
-        <SpotlightShell className="w-full max-w-[1180px] px-6 py-8 sm:px-10 sm:py-12">
-          <div className="flex h-full min-h-fit w-full items-center justify-between gap-12 max-lg:flex-col-reverse max-lg:items-start max-lg:justify-start max-lg:gap-10">
-            <div className="flex w-full max-w-[560px] flex-col gap-6">
+        <SpotlightShell className="w-full max-w-[1180px] px-6 py-8 sm:px-10 sm:py-12 max-sm:px-4 max-sm:py-5">
+          <div className="flex h-full min-h-fit w-full items-center justify-between gap-12 max-lg:flex-col-reverse max-lg:items-start max-lg:justify-start max-lg:gap-10 max-sm:gap-6">
+            <div className="flex w-full max-w-[560px] flex-col gap-6 max-sm:gap-5">
               <div className="flex flex-wrap items-center gap-3">
                 <span className="rounded-full border border-[var(--border)] bg-[var(--surface)]/80 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.35em] text-[var(--muted)] backdrop-blur">
                   Portfolio 2026
@@ -268,7 +268,7 @@ const formFieldClassName =
                 </h1>
               </div>
 
-              <p className="max-w-xl text-sm leading-7 text-[var(--muted)] sm:text-base">
+              <p className="max-w-xl text-sm leading-7 text-[var(--muted)] sm:text-base max-sm:text-[15px] max-sm:leading-7">
                 I build fast, polished web experiences with a strong focus on
                 clean interfaces, smooth interactions, and production-ready
                 frontend engineering. I&apos;m looking for work where I can ship
@@ -276,12 +276,12 @@ const formFieldClassName =
                 experience feel sharp.
               </p>
 
-              <div className="flex flex-wrap items-center gap-4 pt-2">
+              <div className="flex flex-wrap items-center gap-4 pt-2 max-sm:flex-col max-sm:items-stretch">
                 <a
                   href="/Adebayo Bidemi cv.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex h-[52px] items-center justify-center rounded-full bg-[var(--accent)] px-6 text-sm font-semibold capitalize text-[var(--accent-contrast)] shadow-[var(--shadow)] transition-all duration-300 hover:-translate-y-1 hover:bg-[var(--accent-strong)]"
+                  className="inline-flex h-[52px] items-center justify-center rounded-full bg-[var(--accent)] px-6 text-sm font-semibold capitalize text-[var(--accent-contrast)] shadow-[var(--shadow)] transition-all duration-300 hover:-translate-y-1 hover:bg-[var(--accent-strong)] max-sm:w-full"
                 >
                   view resume
                 </a>
@@ -290,7 +290,7 @@ const formFieldClassName =
                   onClick={() => {
                     onSelectTab?.("project");
                   }}
-                  className="inline-flex h-[52px] items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)]/80 px-6 text-sm font-semibold capitalize text-[var(--text)] backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent)]/50 hover:text-[var(--accent)]"
+                  className="inline-flex h-[52px] items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)]/80 px-6 text-sm font-semibold capitalize text-[var(--text)] backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent)]/50 hover:text-[var(--accent)] max-sm:w-full"
                 >
                   see projects
                 </button>
@@ -299,13 +299,13 @@ const formFieldClassName =
                   onClick={() => {
                     onSelectTab?.("contact");
                   }}
-                  className="inline-flex h-[52px] items-center justify-center rounded-full border border-transparent px-2 text-sm font-semibold capitalize text-[var(--muted)] transition-colors duration-300 hover:text-[var(--accent)]"
+                  className="inline-flex h-[52px] items-center justify-center rounded-full border border-transparent px-2 text-sm font-semibold capitalize text-[var(--muted)] transition-colors duration-300 hover:text-[var(--accent)] max-sm:w-full"
                 >
                   let&apos;s connect
                 </button>
               </div>
 
-              <div className="grid gap-4 pt-3 sm:grid-cols-2">
+              <div className="grid gap-4 pt-3 sm:grid-cols-2 max-sm:gap-3">
                 <div className="rounded-[24px] border border-[var(--border)] bg-[var(--surface)]/75 p-4 backdrop-blur">
                   <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-[var(--muted)]">
                     core stack
@@ -325,9 +325,9 @@ const formFieldClassName =
               </div>
             </div>
 
-            <div className="relative flex w-full max-w-[430px] justify-center self-center max-lg:max-w-[360px] max-sm:max-w-full">
+            <div className="relative flex w-full max-w-[430px] justify-center self-center max-lg:max-w-[360px] max-sm:max-w-[300px]">
               <div className="absolute inset-0 scale-90 rounded-full bg-[radial-gradient(circle,_rgba(124,58,237,0.34),transparent_70%)] blur-3xl" />
-              <div className="relative w-full rounded-[34px] border border-[var(--border)] bg-[var(--surface)]/72 p-4 shadow-[var(--shadow)] backdrop-blur">
+              <div className="relative w-full rounded-[34px] border border-[var(--border)] bg-[var(--surface)]/72 p-4 shadow-[var(--shadow)] backdrop-blur max-sm:rounded-[26px] max-sm:p-3">
                 <div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-[var(--accent)]/70 to-transparent" />
                 <div className="relative overflow-hidden rounded-[28px] border border-[var(--border)]">
                   <Image
@@ -335,7 +335,7 @@ const formFieldClassName =
                     alt="Adebayo Bidemi portrait"
                     width={480}
                     height={560}
-                    className="h-[480px] w-full object-cover max-md:h-[360px]"
+                    className="h-[480px] w-full object-cover max-md:h-[360px] max-sm:h-[320px]"
                   />
                   <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,transparent_40%,rgba(15,23,42,0.16)_100%)]" />
                 </div>
@@ -359,8 +359,8 @@ const formFieldClassName =
       )}
 
       {skills && (
-        <div className="flex w-full max-w-[1160px] flex-1 flex-col items-center justify-start gap-8 px-3 py-10 max-lg:w-full">
-          <SpotlightShell className="w-full px-6 py-8 sm:px-8 sm:py-10">
+        <div className="flex w-full max-w-[1160px] flex-1 flex-col items-center justify-start gap-8 px-3 py-10 max-lg:w-full max-sm:px-2 max-sm:py-8">
+          <SpotlightShell className="w-full px-6 py-8 sm:px-8 sm:py-10 max-sm:px-4 max-sm:py-5">
             <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
               <div className="flex flex-col gap-5">
                 <div className="flex flex-wrap items-center gap-3">
@@ -458,12 +458,12 @@ const formFieldClassName =
             </div>
           </SpotlightShell>
 
-          <div className="grid w-full gap-5 sm:grid-cols-2 xl:grid-cols-4">
+          <div className="grid w-full gap-5 sm:grid-cols-2 xl:grid-cols-4 max-sm:gap-4">
             {techStack.map((item) => {
               return (
                 <div
                   key={item.id}
-                  className="group relative overflow-hidden rounded-[28px] border border-[var(--border)] bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(241,245,249,0.90))] p-5 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-[color:rgba(124,58,237,0.32)] hover:shadow-[0_22px_46px_rgba(124,58,237,0.15)] dark:bg-[linear-gradient(180deg,rgba(17,24,39,0.95),rgba(30,41,59,0.90))]"
+                  className="group relative overflow-hidden rounded-[28px] border border-[var(--border)] bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(241,245,249,0.90))] p-5 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-[color:rgba(124,58,237,0.32)] hover:shadow-[0_22px_46px_rgba(124,58,237,0.15)] dark:bg-[linear-gradient(180deg,rgba(17,24,39,0.95),rgba(30,41,59,0.90))] max-sm:rounded-[22px] max-sm:p-4"
                 >
                   <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(124,58,237,0.16),transparent_60%)]" />
@@ -496,8 +496,8 @@ const formFieldClassName =
 
       {
         project &&(
-          <div className="flex w-full max-w-[1160px] flex-1 flex-col items-center justify-start gap-10 px-3 py-10 max-lg:w-full max-lg:flex-col">
-            <div className="w-full rounded-[32px] border border-[var(--border)] bg-[linear-gradient(135deg,rgba(255,255,255,0.94),rgba(124,58,237,0.06),rgba(255,255,255,0.92))] p-6 shadow-[var(--shadow)] dark:bg-[linear-gradient(135deg,rgba(15,23,42,0.92),rgba(124,58,237,0.10),rgba(17,24,39,0.90))] sm:p-8">
+          <div className="flex w-full max-w-[1160px] flex-1 flex-col items-center justify-start gap-10 px-3 py-10 max-lg:w-full max-lg:flex-col max-sm:px-2 max-sm:py-8">
+            <div className="w-full rounded-[32px] border border-[var(--border)] bg-[linear-gradient(135deg,rgba(255,255,255,0.94),rgba(124,58,237,0.06),rgba(255,255,255,0.92))] p-6 shadow-[var(--shadow)] dark:bg-[linear-gradient(135deg,rgba(15,23,42,0.92),rgba(124,58,237,0.10),rgba(17,24,39,0.90))] sm:p-8 max-sm:rounded-[24px] max-sm:p-4">
             <div className="w-full text-left flex flex-col gap-4">
               <h1 className="text-4xl max-sm:text-2xl font-semibold text-gray-600">
                 {[
@@ -582,8 +582,8 @@ const formFieldClassName =
 
       {
         contact && (
-          <div className="flex w-full max-w-[1160px] flex-1 flex-col items-center justify-start gap-8 px-3 py-10 max-lg:w-full">
-            <SpotlightShell className="w-full px-6 py-8 sm:px-8 sm:py-10">
+          <div className="flex w-full max-w-[1160px] flex-1 flex-col items-center justify-start gap-8 px-3 py-10 max-lg:w-full max-sm:px-2 max-sm:py-8">
+            <SpotlightShell className="w-full px-6 py-8 sm:px-8 sm:py-10 max-sm:px-4 max-sm:py-5">
               <div className="grid gap-8 lg:grid-cols-[0.92fr_1.08fr]">
                 <div className="flex flex-col gap-5">
                   <div className="flex flex-wrap items-center gap-3">
@@ -640,7 +640,7 @@ const formFieldClassName =
                   </button>
                 </div>
 
-                <div className="rounded-[32px] border border-[var(--border)] bg-[var(--surface)]/84 p-5 shadow-[var(--shadow)] backdrop-blur sm:p-6">
+                <div className="rounded-[32px] border border-[var(--border)] bg-[var(--surface)]/84 p-5 shadow-[var(--shadow)] backdrop-blur sm:p-6 max-sm:rounded-[24px] max-sm:p-4">
                   <form
                     onSubmit={(e)=>{
                       e.preventDefault()

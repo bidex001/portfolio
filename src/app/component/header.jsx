@@ -9,15 +9,15 @@ const Header = ({
   onSelectTab,
 }) => {
   return (
-    <div className="h-screen flex flex-none flex-col items-center justify-between px-9 text-[var(--muted)] xl:w-[120px] xl:px-0 max-xl:h-auto max-xl:w-full max-xl:flex-row max-xl:py-5 max-xl:mb-0 max-sm:mb-0 max-lg:mb-0 max-lg:px-0 max-sm:fixed max-sm:top-4 max-sm:left-1/2 max-sm:z-50 max-sm:!w-[80%] max-sm:-translate-x-1/2 max-sm:justify-center">
+    <div className="h-screen flex flex-none flex-col items-center justify-between px-9 text-[var(--muted)] xl:w-[120px] xl:px-0 max-xl:h-auto max-xl:w-full max-xl:flex-row max-xl:py-5 max-xl:mb-0 max-sm:mb-0 max-lg:mb-0 max-lg:px-0 max-sm:fixed max-sm:top-3 max-sm:left-1/2 max-sm:z-50 max-sm:!w-[92%] max-sm:-translate-x-1/2 max-sm:justify-center">
         <div className="max-sm:hidden">
           <LogoBadge size="sm" compact className="mx-auto" />
         </div>
-    <main className=" flex items-center justify-center gap-5 max-sm:flex max-sm:w-full max-sm:items-center max-sm:justify-between max-sm:rounded-3xl max-sm:backdrop-blur-xl max-sm:py-3 max-sm:px-4">
+    <main className=" flex items-center justify-center gap-5 max-sm:flex max-sm:w-full max-sm:items-center max-sm:justify-between max-sm:rounded-[28px] max-sm:border max-sm:border-[var(--border)] max-sm:bg-[var(--surface)]/86 max-sm:backdrop-blur-xl max-sm:shadow-[var(--shadow)] max-sm:py-3 max-sm:px-4">
       <div className="hidden max-sm:flex">
         <LogoBadge size="xs" compact />
       </div>
-      <div className="flex flex-col max-xl:flex-row gap-12 max-sm:gap-8 *:text-sm *:capitalize font-body *:cursor-pointer *:hover:underline *:tracking-wide *:hover:text-[var(--text)]">
+      <div className="flex flex-col max-xl:flex-row gap-12 max-sm:flex-1 max-sm:justify-between max-sm:gap-3 *:text-sm *:capitalize font-body *:cursor-pointer *:hover:underline *:tracking-wide *:hover:text-[var(--text)] max-sm:*:text-[12px] max-sm:*:tracking-[0.08em]">
         <p
           className={`vertical vertoppo ${about ? "text-[var(--text)] underline font-bold" : ""}`}
           onClick={() => {

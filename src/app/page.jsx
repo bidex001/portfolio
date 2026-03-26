@@ -48,7 +48,7 @@ const Page = () => {
 
   return (
     <div className='min-h-screen  bg-[var(--bg)] text-[var(--text)] transition-colors duration-300'>
-      <div className='mx-auto flex h-screen w-full max-w-[1500px] items-stretch gap-4 overflow-hidden px-4 sm:px-6 lg:px-8 xl:gap-8 max-xl:h-auto max-xl:min-h-screen max-xl:overflow-visible max-xl:flex-col'>
+      <div className='mx-auto flex h-screen w-full max-w-[1500px] items-stretch gap-4 overflow-hidden px-4 sm:px-6 lg:px-8 xl:gap-8 max-sm:px-3 max-xl:h-auto max-xl:min-h-screen max-xl:overflow-visible max-xl:flex-col'>
         <Header about={about} contact={contact} project={project} skills={skills} onSelectTab={switchTab} />
         <Main about={about} contact={contact} project={project} skills={skills} onSelectTab={switchTab} />
         <Footer darkMode={darkMode} onToggleDark={() => setDarkMode((prev) => !prev)} />

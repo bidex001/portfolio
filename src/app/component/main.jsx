@@ -231,6 +231,14 @@ const projectArray = [
     tools:"next.js + tailwindcss + javascript",
     link:"https://space-website-1xwe.vercel.app/",
     code:"https://github.com/bidex001/space-website"
+  },
+  {
+    name:'math game',
+    description:"A math game that challenges users to solve math problems within a time limit. Built with React native for the frontend.",
+    image:"/images/math.png",
+    tools:"react native + tailwindcss + javascript + expo",
+    link:"",
+    code:"https://github.com/bidex001/math-game"
   }
 ];
 

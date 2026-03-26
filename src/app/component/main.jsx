@@ -4,8 +4,10 @@ import { FaGithub } from "react-icons/fa";
 import Image from "next/image";
 import { FaEye } from "react-icons/fa";
 import axios from "axios";
+import SpotlightShell from "./spotlight-shell";
+import TextReveal from "./text-reveal";
 
-const Main = ({about, contact, project, skills}) => {
+const Main = ({about, contact, project, skills, onSelectTab}) => {
   const [showName, setShowName] = useState(true);
   const [success,setSuccess] = useState(false);
   const [data,setData] = useState({
@@ -30,18 +32,14 @@ const Main = ({about, contact, project, skills}) => {
     }
   }
 
-  const profLetters = ["f", "u", "l", "l", "s", "t", "a", "c", "k"];
-  const nameLetters = ["b", "a", "d", "d", "e", "s", "t"];
-
   useEffect(() => {
     const id = setInterval(() => setShowName((prev) => !prev), 3000);
     return () => clearInterval(id);
   }, []);
 
-  const primaryTitle = showName ? "Adebayo Bidemi" : "Fullstack Developer";
-  const highlightedRole = showName ? "Adebayo Bidemi" : "fullstack developer";
-  const letterSet = showName ? nameLetters : profLetters;
-  const badgeLabel = showName ? "BD" : "FS";
+  const statusLabel = showName
+    ? "Available for fullstack roles"
+    : "Building fast, polished products";
 
  const techStack = [
   {
@@ -234,102 +232,273 @@ const projectArray = [
     link:"https://space-website-1xwe.vercel.app/",
     code:"https://github.com/bidex001/space-website"
   }
-]
+];
+
+const techCategories = [...new Set(techStack.map((item) => item.category))];
+const formFieldClassName =
+  "w-full rounded-[22px] border border-[var(--border)] bg-[var(--surface)]/82 px-5 py-4 text-sm text-[var(--text)] outline-none transition-all duration-300 placeholder:text-[var(--muted)]/80 focus:border-[var(--accent)]/45 focus:bg-[var(--surface)] focus:ring-4 focus:ring-[color:rgba(124,58,237,0.12)]";
 
 
   return (
-    <div className=" flex h-full min-h-0 justify-center flex-1 overflow-y-auto overflow-x-hidden max-sm:w-full max-sm:px-0 max-lg:px-6 max-sm:ml-3 max-lg:py-2 max-sm:mt-20 max-xl:w-full  text-[var(--text)]">
+    <div className="flex h-full min-h-0 flex-1 justify-center overflow-y-auto overflow-x-hidden text-[var(--text)] max-xl:h-auto max-xl:min-h-screen max-xl:overflow-visible max-xl:w-full max-lg:py-2 max-sm:pt-24 max-sm:pb-28">
       {about && (
-        <div className=" w-[1000px] h-full min-h-fit max-sm:w-full flex max-lg:flex-col-reverse items-center max-sm:justify-center justify-between max-lg:gap-10 max-sm:gap-5 ">
-          <div className=" w-[500px] max-lg:w-full max-lg:justify-center max-lg:items-center flex flex-col gap-10 max-lg:gap-5 p-4">
-            <h1 className=" text-4xl max-sm:text-2xl  font-heading font-semibold flex flex-col gap-1 max-sm:items-start leading-tight">
-              <span className=" text-[var(--muted)]  font-heading font-normal dance cursor-pointer">
-                Hello, {`I'm`}
-              </span>
-              <span className=" text-[var(--accent)] capitalize dance cursor-pointer">
-                adebayo bidemi.
-              </span>
-            </h1>
-            <p className=" text-sm font-body max-lg:w-[600px] max-sm:w-full max-sm:text-xs max-lg:text-center text-[var(--muted)]">
-              I am a{" "}
-              <span className=" text-[var(--text)] font-semibold tracking-wider">
-                fullstack developer
-              </span>{" "}
-              I have a strong background in creating visually appealing and{" "}
-              <span className=" text-[var(--text)] font-semibold tracking-wider">
-                user-friendly web experiences.
-              </span>{" "}
-              I am motivated to find a role where I can challenge myself{" "}
-              <span className=" text-[var(--text)] font-semibold tracking-wider">
-                and provide value to website users.
-              </span>{" "}
-              I am excited to bring my knowledge and experience to a team and
-              contribute to a {`company`}s success.
-            </p>
-           <a
-            href="/Adebayo Bidemi cv.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-              <div className="relative mt-0 *:cursor-pointer group">
-              <div className=" w-[150px] h-[50px] border-2 border-[var(--border)] absolute font-body top-[9] left-[9] group-hover:top-0 group-hover:left-0 transition-all duration-700 z-0"></div>
-              <button className="w-[150px] h-[50px] bg-[var(--accent)] hover:bg-[var(--accent-strong)] text-[var(--accent-contrast)] capitalize cursor-pointer transition-colors duration-200 shadow-[var(--shadow)] relative z-50">
-                view resume
-              </button>
-            </div>..
-           </a>
-          </div>
+        <SpotlightShell className="w-full max-w-[1180px] px-6 py-8 sm:px-10 sm:py-12">
+          <div className="flex h-full min-h-fit w-full items-center justify-between gap-12 max-lg:flex-col-reverse max-lg:items-start max-lg:justify-start max-lg:gap-10">
+            <div className="flex w-full max-w-[560px] flex-col gap-6">
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="rounded-full border border-[var(--border)] bg-[var(--surface)]/80 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.35em] text-[var(--muted)] backdrop-blur">
+                  Portfolio 2026
+                </span>
+                <span className="rounded-full border border-[color:rgba(124,58,237,0.18)] bg-[color:rgba(124,58,237,0.12)] px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--accent)]">
+                  {statusLabel}
+                </span>
+              </div>
 
-          <div className="flex max-lg:w-full justify-center items-center   max-sm:w-full ">
-            <Image src={"/bidex.jpg"} alt="images" width={400} height={400}  className=" w-[400px] h-[400px] rounded-full object-cover max-md:w-[300px] max-md:h-[300px]"/>
+              <div className="space-y-3">
+                <p className="text-xs font-semibold uppercase tracking-[0.45em] text-[var(--muted)]">
+                  Hello, I&apos;m
+                </p>
+                <h1 className="font-heading text-4xl font-semibold leading-[0.95] max-sm:text-3xl sm:text-5xl xl:text-6xl">
+                  <TextReveal text="Adebayo Bidemi" className="block" />
+                  <TextReveal
+                    text="Fullstack Developer"
+                    className="mt-3 block text-[var(--accent)]"
+                    initialDelay={240}
+                  />
+                </h1>
+              </div>
+
+              <p className="max-w-xl text-sm leading-7 text-[var(--muted)] sm:text-base">
+                I build fast, polished web experiences with a strong focus on
+                clean interfaces, smooth interactions, and production-ready
+                frontend engineering. I&apos;m looking for work where I can ship
+                useful products, solve real UI problems, and make the end-user
+                experience feel sharp.
+              </p>
+
+              <div className="flex flex-wrap items-center gap-4 pt-2">
+                <a
+                  href="/Adebayo Bidemi cv.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex h-[52px] items-center justify-center rounded-full bg-[var(--accent)] px-6 text-sm font-semibold capitalize text-[var(--accent-contrast)] shadow-[var(--shadow)] transition-all duration-300 hover:-translate-y-1 hover:bg-[var(--accent-strong)]"
+                >
+                  view resume
+                </a>
+                <button
+                  type="button"
+                  onClick={() => {
+                    onSelectTab?.("project");
+                  }}
+                  className="inline-flex h-[52px] items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)]/80 px-6 text-sm font-semibold capitalize text-[var(--text)] backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent)]/50 hover:text-[var(--accent)]"
+                >
+                  see projects
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    onSelectTab?.("contact");
+                  }}
+                  className="inline-flex h-[52px] items-center justify-center rounded-full border border-transparent px-2 text-sm font-semibold capitalize text-[var(--muted)] transition-colors duration-300 hover:text-[var(--accent)]"
+                >
+                  let&apos;s connect
+                </button>
+              </div>
+
+              <div className="grid gap-4 pt-3 sm:grid-cols-2">
+                <div className="rounded-[24px] border border-[var(--border)] bg-[var(--surface)]/75 p-4 backdrop-blur">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-[var(--muted)]">
+                    core stack
+                  </p>
+                  <p className="mt-3 text-sm font-semibold text-[var(--text)]">
+                    Next.js, React, Tailwind, Node.js
+                  </p>
+                </div>
+                <div className="rounded-[24px] border border-[var(--border)] bg-[var(--surface)]/75 p-4 backdrop-blur">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-[var(--muted)]">
+                    workflow
+                  </p>
+                  <p className="mt-3 text-sm font-semibold text-[var(--text)]">
+                    Responsive UI, APIs, polished interactions
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative flex w-full max-w-[430px] justify-center self-center max-lg:max-w-[360px] max-sm:max-w-full">
+              <div className="absolute inset-0 scale-90 rounded-full bg-[radial-gradient(circle,_rgba(124,58,237,0.34),transparent_70%)] blur-3xl" />
+              <div className="relative w-full rounded-[34px] border border-[var(--border)] bg-[var(--surface)]/72 p-4 shadow-[var(--shadow)] backdrop-blur">
+                <div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-[var(--accent)]/70 to-transparent" />
+                <div className="relative overflow-hidden rounded-[28px] border border-[var(--border)]">
+                  <Image
+                    src={"/bidex.jpg"}
+                    alt="Adebayo Bidemi portrait"
+                    width={480}
+                    height={560}
+                    className="h-[480px] w-full object-cover max-md:h-[360px]"
+                  />
+                  <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,transparent_40%,rgba(15,23,42,0.16)_100%)]" />
+                </div>
+                <div className="mt-4 flex items-center justify-between gap-4 rounded-[24px] border border-[var(--border)] bg-[var(--surface)]/85 p-4">
+                  <div>
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.35em] text-[var(--muted)]">
+                      focus
+                    </p>
+                    <p className="mt-2 text-sm font-semibold text-[var(--text)]">
+                      Crafting high-conviction UI with backend support
+                    </p>
+                  </div>
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[color:rgba(124,58,237,0.14)] text-sm font-bold tracking-[0.25em] text-[var(--accent)]">
+                    FS
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+        </SpotlightShell>
       )}
 
       {skills && (
-        <div className=" flex-1 flex-col w-full justify-start py-10 gap-15 items-center flex max-lg:flex-col max-lg:gap-10">
-          <div className=" w-full text-left max-sm:w-full flex flex-col gap-6">
-            <div className=" flex flex-col gap-3 *:text-4xl *:font-bold *:max-sm:text-2xl">
-              <h1 className="  text-gray-600 *:bounce "><span className="bounce">I</span> <span className="bounce">w</span><span className="bounce">o</span><span className="bounce">r</span><span className="bounce">k</span> <span className="bounce">m</span><span className="bounce">o</span><span className="bounce">s</span><span className="bounce">t</span><span className="bounce">l</span><span className="bounce">y</span> <span className="bounce">w</span><span className="bounce">i</span><span className="bounce">t</span><span className="bounce">h</span></h1>
-              <h1 className="text-[var(--accent)]"><span className="bounce">F</span><span className="bounce">u</span><span className="bounce">l</span><span className="bounce">l</span><span className="bounce">s</span><span className="bounce">t</span><span className="bounce">a</span><span className="bounce">c</span><span className="bounce">k</span></h1>
-              <h1 className="text-[var(--accent)]"><span className="bounce">T</span><span className="bounce">e</span><span className="bounce">c</span><span className="bounce">h</span><span className="bounce">n</span><span className="bounce">o</span><span className="bounce">l</span><span className="bounce">o</span><span className="bounce">g</span><span className="bounce">i</span><span className="bounce">e</span><span className="bounce">s</span></h1>
-            </div>
-                <p className=" text-sm">
-                  <span className="text-gray-500">Here are some of the</span> tools <span className="text-gray-500">{"i've"} worked with over the years, for my</span> personal, professional <span className="text-gray-500">and</span> open source <span className="text-gray-500">projects</span>
-                </p>
-          <a
-            href="/Adebayo Bidemi cv.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-              <div className="relative mt-0 *:cursor-pointer group">
-              <div className=" w-[150px] h-[50px] border-2 border-[var(--border)] absolute font-body top-[9] left-[9] group-hover:top-0 group-hover:left-0 transition-all duration-700 z-0"></div>
-              <button className="w-[150px] h-[50px] bg-[var(--accent)] hover:bg-[var(--accent-strong)] text-[var(--accent-contrast)] capitalize cursor-pointer transition-colors duration-200 shadow-[var(--shadow)] relative z-50">
-                view resume
-              </button>
-            </div>
-           </a>
-          </div>
+        <div className="flex w-full max-w-[1160px] flex-1 flex-col items-center justify-start gap-8 px-3 py-10 max-lg:w-full">
+          <SpotlightShell className="w-full px-6 py-8 sm:px-8 sm:py-10">
+            <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
+              <div className="flex flex-col gap-5">
+                <div className="flex flex-wrap items-center gap-3">
+                  <span className="rounded-full border border-[var(--border)] bg-[var(--surface)]/80 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.32em] text-[var(--muted)] backdrop-blur">
+                    Skill stack
+                  </span>
+                  <span className="rounded-full border border-[color:rgba(124,58,237,0.18)] bg-[color:rgba(124,58,237,0.12)] px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--accent)]">
+                    {techStack.length} technologies
+                  </span>
+                </div>
 
-          <div className=" w-full bg-gray-100 p-10 h-fit max-lg:w-[500px] max-sm:w-[350px] max-sm:h-fit *:shrink-0  flex flex-wrap gap-10 max-sm:grid max-sm:grid-cols-2 max-sm:place-items-center max-sm:p-5 justify-center items-center">
-            {
-              techStack.map((item, index) => {
-                return(
-                  <div key={index} className=" flex flex-col gap-2 w-[200px] max-lg:w-[150px] max-lg:h-[100px] rounded-2xl h-[200px] hover:shadow-lg hover:scale-105 duration-300  p-2 items-center justify-center bg-white">
-                    <Image src={item.image} alt="item" width={100} height={100} className=" max-lg:w-[50px] max-lg:h-[50px]"/>
-                    <h1 className=" text-black text-xs font-bold">{item.name}</h1>
+                <div className="space-y-3">
+                  <p className="text-xs font-semibold uppercase tracking-[0.45em] text-[var(--muted)]">
+                    Working toolkit
+                  </p>
+                  <h1 className="font-heading text-4xl font-semibold leading-[0.95] max-sm:text-3xl sm:text-5xl">
+                    <TextReveal text="Fullstack technologies" className="block" />
+                  </h1>
+                </div>
+
+                <p className="max-w-2xl text-sm leading-7 text-[var(--muted)] sm:text-base">
+                  These are the tools I lean on to build frontend-heavy products,
+                  API-connected applications, and complete end-to-end portfolio
+                  work. The focus is practical: clean UI, maintainable code, and
+                  reliable delivery.
+                </p>
+
+                <div className="flex flex-wrap gap-3 pt-1">
+                  {techCategories.map((category) => (
+                    <span
+                      key={category}
+                      className="rounded-full border border-[var(--border)] bg-[var(--surface)]/78 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--muted)] backdrop-blur"
+                    >
+                      {category}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="flex flex-wrap items-center gap-4 pt-3">
+                  <a
+                    href="/Adebayo Bidemi cv.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex h-[50px] items-center justify-center rounded-full bg-[var(--accent)] px-6 text-sm font-semibold capitalize text-[var(--accent-contrast)] shadow-[var(--shadow)] transition-all duration-300 hover:-translate-y-1 hover:bg-[var(--accent-strong)]"
+                  >
+                    view resume
+                  </a>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      onSelectTab?.("project");
+                    }}
+                    className="inline-flex h-[50px] items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)]/78 px-6 text-sm font-semibold capitalize text-[var(--text)] transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent)]/45 hover:text-[var(--accent)]"
+                  >
+                    see projects
+                  </button>
+                </div>
+              </div>
+
+              <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+                <div className="rounded-[26px] border border-[var(--border)] bg-[var(--surface)]/78 p-5 backdrop-blur">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.35em] text-[var(--muted)]">
+                    frontend
+                  </p>
+                  <p className="mt-4 text-3xl font-semibold text-[var(--text)]">
+                    6+
+                  </p>
+                  <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+                    React, Next.js, Tailwind CSS and the UI foundations I use most often.
+                  </p>
+                </div>
+                <div className="rounded-[26px] border border-[var(--border)] bg-[var(--surface)]/78 p-5 backdrop-blur">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.35em] text-[var(--muted)]">
+                    backend
+                  </p>
+                  <p className="mt-4 text-3xl font-semibold text-[var(--text)]">
+                    APIs
+                  </p>
+                  <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+                    Node.js, Express, Python, databases, and end-to-end application flow.
+                  </p>
+                </div>
+                <div className="rounded-[26px] border border-[var(--border)] bg-[var(--surface)]/78 p-5 backdrop-blur">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.35em] text-[var(--muted)]">
+                    delivery
+                  </p>
+                  <p className="mt-4 text-3xl font-semibold text-[var(--text)]">
+                    Ship
+                  </p>
+                  <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+                    Git, Docker, Vercel, and testing tools for production-ready workflow.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </SpotlightShell>
+
+          <div className="grid w-full gap-5 sm:grid-cols-2 xl:grid-cols-4">
+            {techStack.map((item) => {
+              return (
+                <div
+                  key={item.id}
+                  className="group relative overflow-hidden rounded-[28px] border border-[var(--border)] bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(241,245,249,0.90))] p-5 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-[color:rgba(124,58,237,0.32)] hover:shadow-[0_22px_46px_rgba(124,58,237,0.15)] dark:bg-[linear-gradient(180deg,rgba(17,24,39,0.95),rgba(30,41,59,0.90))]"
+                >
+                  <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(124,58,237,0.16),transparent_60%)]" />
                   </div>
-                )
-              })
-            }
+                  <div className="relative z-10 flex h-full flex-col gap-4">
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-[18px] border border-[var(--border)] bg-[var(--surface)]/85">
+                        <Image src={item.image} alt={item.name} width={44} height={44} className="h-11 w-11 object-contain" />
+                      </div>
+                      <span className="rounded-full border border-[var(--border)] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.25em] text-[var(--muted)]">
+                        {item.level}
+                      </span>
+                    </div>
+                    <div className="space-y-2">
+                      <h1 className="text-lg font-bold text-[var(--text)]">{item.name}</h1>
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">
+                        {item.category}
+                      </p>
+                    </div>
+                    <p className="text-sm leading-6 text-[var(--muted)]">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       )}
 
       {
         project &&(
-          <div className="  py-10 px-5 flex-1 flex-col gap-10 flex max-lg:flex-col max-lg:w-full justify-start items-center">
-            <div className="  w-full text-left  flex flex-col gap-4">
+          <div className="flex w-full max-w-[1160px] flex-1 flex-col items-center justify-start gap-10 px-3 py-10 max-lg:w-full max-lg:flex-col">
+            <div className="w-full rounded-[32px] border border-[var(--border)] bg-[linear-gradient(135deg,rgba(255,255,255,0.94),rgba(124,58,237,0.06),rgba(255,255,255,0.92))] p-6 shadow-[var(--shadow)] dark:bg-[linear-gradient(135deg,rgba(15,23,42,0.92),rgba(124,58,237,0.10),rgba(17,24,39,0.90))] sm:p-8">
+            <div className="w-full text-left flex flex-col gap-4">
               <h1 className="text-4xl max-sm:text-2xl font-semibold text-gray-600">
                 {[
                   "I"," ","l","o","v","e"," ","w","o","r","k","i","n","g"," ","o","n"," "
@@ -356,39 +525,56 @@ const projectArray = [
                 In my leisure time, I enjoy <span>experimenting</span> with and building things that I find personally <span>interesting</span> or <span>useful</span>. A few examples of these projects can be found on my <span>GitHub page</span>, where you can also find other <span>miscellaneous creations</span> I have worked on.
               </p>
               
-              <div className="relative mt-0 *:cursor-pointer group">
-              <div className="w-[150px] h-[50px] border-2 border-[var(--border)] absolute font-body top-[9] left-[9] group-hover:top-0 group-hover:left-0 transition-all duration-700 z-0"></div>
-
               <a
-              href="https://github.com/bidex001?tab=repositories"
-              target="_blank"
-              rel="noopener noreferrer"
+                href="https://github.com/bidex001?tab=repositories"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex h-[50px] w-fit items-center justify-center rounded-full bg-[var(--accent)] px-6 text-sm font-semibold capitalize text-[var(--accent-contrast)] shadow-[var(--shadow)] transition-all duration-300 hover:-translate-y-1 hover:bg-[var(--accent-strong)]"
               >
-              <button className="w-[150px] h-[50px] bg-[var(--accent)] hover:bg-[var(--accent-strong)] text-[var(--accent-contrast)] capitalize cursor-pointer transition-colors duration-200 shadow-[var(--shadow)] relative z-50">
-              view github
-              </button>
+                view github
               </a>
-              </div>
 
             </div>
 
-            <div className=" w-full max-lg:flex max-lg:flex-wrap  grid grid-cols-3 bg-gray-100 p-8 rounded-2xl justify-center border-red-500  items-center gap-6">
+            <div className="mt-8 grid w-full items-stretch gap-6 md:grid-cols-2 xl:grid-cols-3">
               {
                 projectArray.map((item, index) => {
                   return(
-                    <div key={index} className=" flex flex-col gap-2 hover:shadow-lg max-lg:w-[300px] max-lg:h-[350px] shrink-0 bg-gray-50 p-5 rounded-2xl h-[400px] hover:scale-105 duration-300 max-sm:w-full">
-                      <Image src={item.image} alt={item.name} width={400} height={200}/>
-                      <h1 className=" text-xl font-sans-serif font-bold capitalize">{item.name}</h1>
-                      <p className=" text-sm text-gray-600 line-clamp-2">{item.description}</p>
-                      <p className=" text-sm italic text-gray-500">{item.tools}</p>
-                      <div className=" flex gap-5">
-                        <a href={item.link} target="_blank" rel="noopener noreferrer" className="flex gap-2 items-center"><span className=" text-xs"><FaEye /></span>View</a>
-                       <a href={item.code} target="_blank" rel="noopener noreferrer" className="flex gap-2 items-center "><span className=" text-xs"><FaGithub /></span>Code</a>
+                    <div key={index} className="group relative flex h-full min-h-[430px] flex-col overflow-hidden rounded-[28px] border border-[var(--border)] bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(241,245,249,0.90))] p-5 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-[color:rgba(124,58,237,0.32)] hover:shadow-[0_28px_60px_rgba(124,58,237,0.16)] dark:bg-[linear-gradient(180deg,rgba(17,24,39,0.95),rgba(30,41,59,0.90))]">
+                      <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(124,58,237,0.18),transparent_58%)]" />
+                        <div className="absolute -right-8 top-10 h-28 w-28 rounded-full bg-[color:rgba(124,58,237,0.18)] blur-3xl" />
+                      </div>
+                      <div className="relative z-10 flex h-full flex-col gap-4">
+                        <div className="overflow-hidden rounded-[22px] border border-[var(--border)] bg-[var(--surface)]/70">
+                          <Image
+                            src={item.image}
+                            alt={item.name}
+                            width={400}
+                            height={220}
+                            className="h-[220px] w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                          />
+                        </div>
+                        <div className="flex items-center justify-between gap-3">
+                          <h1 className="text-xl font-bold capitalize text-[var(--text)]">{item.name}</h1>
+                          <span className="rounded-full border border-[var(--border)] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.25em] text-[var(--muted)]">
+                            featured
+                          </span>
+                        </div>
+                        <p className="line-clamp-3 text-sm leading-6 text-[var(--muted)]">{item.description}</p>
+                        <p className="rounded-[18px] border border-[var(--border)] bg-[var(--surface)]/70 px-4 py-3 text-xs italic text-[var(--muted)]">
+                          {item.tools}
+                        </p>
+                        <div className="mt-auto flex gap-3 pt-2">
+                          <a href={item.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[var(--accent)] px-4 py-2 text-sm font-semibold text-[var(--accent-contrast)] transition-colors duration-300 hover:bg-[var(--accent-strong)]"><span className=" text-xs"><FaEye /></span>View</a>
+                          <a href={item.code} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] px-4 py-2 text-sm font-semibold text-[var(--text)] transition-colors duration-300 hover:border-[var(--accent)]/40 hover:text-[var(--accent)]"><span className=" text-xs"><FaGithub /></span>Code</a>
+                        </div>
                       </div>
                     </div>
                   )
                 })
               }
+            </div>
             </div>
           </div>
         )
@@ -396,50 +582,123 @@ const projectArray = [
 
       {
         contact && (
-          <div className=" w-[1000px] max-lg:flex-col max-lg:w-full justify-center items-center flex gap-4 max-lg:gap-10">
-            <div className=" w-[500px] max-sm:w-full flex flex-col gap-4">
-              <h1 className=" text-4xl max-sm:text-2xl tracking-wider font-bold text-[var(--accent)]">Want to work with <br /> me?</h1>
-              <h1 className="text-4xl font-bold">let`s Connect</h1>
-              <p className=" text-sm text-[grey]">
-                I am open to remote and onsite full-time, part-time, and contract frontend web development jobs.
-              </p>
-            </div>
+          <div className="flex w-full max-w-[1160px] flex-1 flex-col items-center justify-start gap-8 px-3 py-10 max-lg:w-full">
+            <SpotlightShell className="w-full px-6 py-8 sm:px-8 sm:py-10">
+              <div className="grid gap-8 lg:grid-cols-[0.92fr_1.08fr]">
+                <div className="flex flex-col gap-5">
+                  <div className="flex flex-wrap items-center gap-3">
+                    <span className="rounded-full border border-[var(--border)] bg-[var(--surface)]/80 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.32em] text-[var(--muted)] backdrop-blur">
+                      Contact
+                    </span>
+                    <span className="rounded-full border border-[color:rgba(124,58,237,0.18)] bg-[color:rgba(124,58,237,0.12)] px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--accent)]">
+                      Open for work
+                    </span>
+                  </div>
 
-            <div className=" w-[500px] max-sm:w-full justify-center items-center flex">
-              <form 
-              onSubmit={(e)=>{
-                e.preventDefault()
-                sendMail()
-              }}
-              className=" w-full h-fit flex gap-5 flex-col">
-                <input type="text" placeholder=" enter your Name"
-                value={data.name}
-                onChange={(e)=>{
-                  setData({...data,name:e.target.value})
-                }}
-                className=" text-sm border-3 border-[#000000c0] p-6 capitalize" />
-                <input type="email"
-                 placeholder=" enter your Email"
-                 value={data.email}
-                 onChange={(e)=>{
-                  setData({...data,email:e.target.value})
-                }}
-                className=" text-sm border-3 border-[#000000c0] p-6 capitalize"  />
-                <textarea
-                  value={data.message}
-                  onChange={(e)=>{
-                    setData({...data,message:e.target.value})
-                  }}
-                className=" text-sm border-3 border-[#000000c0] p-3 capitalize h-[120px]" 
-                 placeholder="Your Message"></textarea>
-                  <div className="relative mt-0 *:cursor-pointer group">
-              <div className=" w-full h-[50px] border-2 border-[var(--border)] absolute font-body top-[9] left-[9] group-hover:top-0 group-hover:left-0 transition-all duration-700 z-0"></div>
-              <button className="w-full h-[50px] bg-[var(--accent)] hover:bg-[var(--accent-strong)] text-[var(--accent-contrast)] uppercase font-bold tracking-widest cursor-pointer transition-colors duration-200 shadow-[var(--shadow)] relative z-50">
-                connect
-              </button>
-             </div>
-              </form>
-            </div>
+                  <div className="space-y-3">
+                    <p className="text-xs font-semibold uppercase tracking-[0.45em] text-[var(--muted)]">
+                      Let&apos;s build
+                    </p>
+                    <h1 className="font-heading text-4xl font-semibold leading-[0.95] max-sm:text-3xl sm:text-5xl">
+                      <TextReveal text="Let's connect and build something useful" className="block" />
+                    </h1>
+                  </div>
+
+                  <p className="max-w-xl text-sm leading-7 text-[var(--muted)] sm:text-base">
+                    I&apos;m available for remote and onsite frontend or fullstack
+                    work, contract projects, and product collaborations where
+                    strong UI execution matters.
+                  </p>
+
+                  <div className="grid gap-4 sm:grid-cols-2">
+                    <div className="rounded-[26px] border border-[var(--border)] bg-[var(--surface)]/78 p-5 backdrop-blur">
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.35em] text-[var(--muted)]">
+                        focus
+                      </p>
+                      <p className="mt-3 text-sm font-semibold text-[var(--text)]">
+                        Frontend engineering, polished interactions, complete builds
+                      </p>
+                    </div>
+                    <div className="rounded-[26px] border border-[var(--border)] bg-[var(--surface)]/78 p-5 backdrop-blur">
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.35em] text-[var(--muted)]">
+                        work style
+                      </p>
+                      <p className="mt-3 text-sm font-semibold text-[var(--text)]">
+                        Full-time, contract, freelance, and product partnerships
+                      </p>
+                    </div>
+                  </div>
+
+                  <button
+                    type="button"
+                    onClick={() => {
+                      onSelectTab?.("project");
+                    }}
+                    className="inline-flex h-[50px] w-fit items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)]/78 px-6 text-sm font-semibold capitalize text-[var(--text)] transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent)]/45 hover:text-[var(--accent)]"
+                  >
+                    browse projects first
+                  </button>
+                </div>
+
+                <div className="rounded-[32px] border border-[var(--border)] bg-[var(--surface)]/84 p-5 shadow-[var(--shadow)] backdrop-blur sm:p-6">
+                  <form
+                    onSubmit={(e)=>{
+                      e.preventDefault()
+                      sendMail()
+                    }}
+                    className="flex h-fit flex-col gap-4"
+                  >
+                    <div className="space-y-1">
+                      <label htmlFor="contact-name" className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[var(--muted)]">
+                        Your name
+                      </label>
+                      <input
+                        id="contact-name"
+                        type="text"
+                        placeholder="Enter your name"
+                        value={data.name}
+                        onChange={(e)=>{
+                          setData({...data,name:e.target.value})
+                        }}
+                        className={formFieldClassName}
+                      />
+                    </div>
+                    <div className="space-y-1">
+                      <label htmlFor="contact-email" className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[var(--muted)]">
+                        Email
+                      </label>
+                      <input
+                        id="contact-email"
+                        type="email"
+                        placeholder="Enter your email"
+                        value={data.email}
+                        onChange={(e)=>{
+                          setData({...data,email:e.target.value})
+                        }}
+                        className={formFieldClassName}
+                      />
+                    </div>
+                    <div className="space-y-1">
+                      <label htmlFor="contact-message" className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[var(--muted)]">
+                        Message
+                      </label>
+                      <textarea
+                        id="contact-message"
+                        value={data.message}
+                        onChange={(e)=>{
+                          setData({...data,message:e.target.value})
+                        }}
+                        className={`${formFieldClassName} min-h-[170px] resize-none`}
+                        placeholder="Tell me about your project or role"
+                      />
+                    </div>
+                    <button className="mt-2 inline-flex h-[54px] w-full items-center justify-center rounded-full bg-[var(--accent)] text-sm font-semibold uppercase tracking-[0.24em] text-[var(--accent-contrast)] shadow-[var(--shadow)] transition-all duration-300 hover:-translate-y-1 hover:bg-[var(--accent-strong)]">
+                      connect
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </SpotlightShell>
           </div>
         )
       }

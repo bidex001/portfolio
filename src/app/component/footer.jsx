@@ -14,7 +14,7 @@ const Footer = ({ darkMode, onToggleDark }) => {
     if (onToggleDark) onToggleDark()
   }
   return (
-    <div className=" h-screen flex flex-none flex-col justify-between items-center p-10 max-sm:px-3 text-[var(--text)] max-xl:flex-row max-xl:w-full max-xl:h-auto">
+    <div className="h-screen max-sm:fixed max-sm:bottom-0 max-sm:backdrop-blur-2xl max-sm:left-0 max-sm:z-50 flex flex-none flex-col items-center justify-between py-5 px-10 rounded-[30px] text-[var(--text)] xl:w-[120px] xl:px-0 xl:py-10 max-xl:h-auto max-xl:w-full max-xl:flex-row max-sm:px-3">
       <button
         onClick={handleThemeToggle}
         aria-pressed={!!darkMode}
@@ -32,7 +32,7 @@ const Footer = ({ darkMode, onToggleDark }) => {
         {view ? <FaXmark /> : <FaShareAlt />}
       </button>
 
-      <div className={`fixed bottom-25 right-20 max-xl:flex-row max-xl:right-[150px] max-xl:bottom-10 max-lg:bottom-[40px] max-sm:bottom-[40px] max-sm:right-22 max-lg:right-30 flex flex-col  gap-4 justify-center items-center transition-all duration-300 ease-out ${view ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12 pointer-events-none'}`}>
+      <div className={`fixed bottom-25 right-20 max-xl:flex-row max-xl:right-[150px] max-xl:bottom-10 max-lg:bottom-[40px] max-sm:bottom-[20px] max-sm:right-22 max-lg:right-30 flex flex-col  gap-4 justify-center items-center transition-all duration-300 ease-out ${view ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12 pointer-events-none'}`}>
         <a
           href="https://www.facebook.com/share/1CuYHmf1Jo/?mibextid=wwXIfr"
           target="_blank"

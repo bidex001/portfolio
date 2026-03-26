@@ -1,9 +1,9 @@
 "use client"
 import React, { useEffect, useRef, useState } from 'react'
-import Image from "next/image"
 import Header from './component/header'
 import Main from './component/main'
 import Footer from './component/footer'
+import LogoBadge from './component/logo-badge'
 
 const Page = () => {
   const [darkMode, setDarkMode] = useState(false)
@@ -47,23 +47,21 @@ const Page = () => {
   }
 
   return (
-    <div className=' w-full h-screen  min-h-screen max-xl:flex-col items-center flex overflow-hidden bg-[var(--bg)] text-[var(--text)] justify-between transition-colors duration-300'>
-      <Header about={about} contact={contact} project={project} skills={skills} onSelectTab={switchTab} />
-      <div className='flex flex-1 min-w-0 h-full items-stretch justify-between max-xl:flex-col max-xl:w-full'>
-        <Main about={about} contact={contact} project={project} skills={skills}/>
+    <div className='min-h-screen  bg-[var(--bg)] text-[var(--text)] transition-colors duration-300'>
+      <div className='mx-auto flex h-screen w-full max-w-[1500px] items-stretch gap-4 overflow-hidden px-4 sm:px-6 lg:px-8 xl:gap-8 max-xl:h-auto max-xl:min-h-screen max-xl:overflow-visible max-xl:flex-col'>
+        <Header about={about} contact={contact} project={project} skills={skills} onSelectTab={switchTab} />
+        <Main about={about} contact={contact} project={project} skills={skills} onSelectTab={switchTab} />
         <Footer darkMode={darkMode} onToggleDark={() => setDarkMode((prev) => !prev)} />
       </div>
       {loading && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-[var(--bg)]/80 backdrop-blur-sm">
-          <div className="scale-110">
-            <Image
-              src="/logo1.png"
-              alt="Loading logo"
-              width={200}
-              height={200}
-              priority
-              className="transform scale-110 animate-loader-scale"
-            />
+          <div className="flex flex-col items-center gap-5">
+            <div className="scale-110">
+              <LogoBadge size="lg" caption="Bidex Studio" />
+            </div>
+            <p className="text-xs font-semibold uppercase tracking-[0.4em] text-[var(--muted)]">
+              loading experience
+            </p>
           </div>
         </div>
       )}

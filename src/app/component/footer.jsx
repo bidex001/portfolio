@@ -1,6 +1,5 @@
 "use client"
 import React from "react";
-import { FaRegMoon } from "react-icons/fa";
 import { FaShareAlt } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
@@ -8,21 +7,10 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { useState } from "react";
 import { FaXmark } from "react-icons/fa6";
-const Footer = ({ darkMode, onToggleDark }) => {
+const Footer = () => {
   const [view, setView] = useState(false)
-  const handleThemeToggle = () => {
-    if (onToggleDark) onToggleDark()
-  }
   return (
-    <div className="h-screen flex flex-none flex-col items-center justify-between py-5 px-10 rounded-[30px] text-[var(--text)] xl:w-[120px] xl:px-0 xl:py-10 max-xl:h-auto max-xl:w-full max-xl:flex-row max-sm:fixed max-sm:bottom-4 max-sm:left-1/2 max-sm:z-50 max-sm:!w-auto max-sm:-translate-x-1/2 max-sm:flex-row max-sm:justify-center max-sm:gap-5 max-sm:rounded-full max-sm:border max-sm:border-[var(--border)] max-sm:bg-[var(--surface)]/88 max-sm:px-5 max-sm:py-3 max-sm:shadow-[var(--shadow)] max-sm:backdrop-blur-2xl">
-      <button
-        onClick={handleThemeToggle}
-        aria-pressed={!!darkMode}
-        className=" w-[40px] h-[40px] flex bg-[var(--surface)] border border-[var(--border)] justify-center items-center text-lg rounded-full cursor-pointer hover:scale-110 active:scale-110 hover:bg-[var(--surface-2)] transition-colors duration-200 shadow-sm"
-      >
-        <FaRegMoon className={darkMode ? 'text-[var(--accent)]' : ''} />
-      </button>
-
+    <div className="h-screen flex flex-none flex-col items-center justify-center gap-6 py-5 px-10 rounded-[30px] text-[var(--text)] xl:w-[120px] xl:px-0 xl:py-10 max-xl:h-auto max-xl:w-full max-xl:flex-row max-sm:fixed max-sm:bottom-4 max-sm:left-1/2 max-sm:z-50 max-sm:!w-auto max-sm:-translate-x-1/2 max-sm:flex-row max-sm:justify-center max-sm:gap-5 max-sm:rounded-full max-sm:border max-sm:border-[var(--border)] max-sm:bg-[var(--surface)]/88 max-sm:px-5 max-sm:py-3 max-sm:shadow-[var(--shadow)] max-sm:backdrop-blur-2xl">
       <button
         onClick={() => {
           setView(!view)

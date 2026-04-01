@@ -9,7 +9,7 @@ const Header = ({
   onSelectTab,
 }) => {
   return (
-    <div className="h-screen flex flex-none flex-col items-center justify-between px-9 text-[var(--muted)] xl:w-[120px] xl:px-0 max-xl:h-auto max-xl:w-full max-xl:flex-row max-xl:py-5 max-xl:mb-0 max-sm:mb-0 max-lg:mb-0 max-lg:px-0 max-sm:fixed max-sm:top-3 max-sm:left-1/2 max-sm:z-50 max-sm:!w-[92%] max-sm:-translate-x-1/2 max-sm:justify-center">
+    <div className="h-screen flex flex-none flex-col items-center justify-between px-9 text-[var(--muted)] xl:w-[120px] xl:px-0 max-xl:h-auto max-xl:w-full max-xl:flex-row max-xl:py-5 max-xl:mb-0 max-sm:mb-0 max-lg:mb-0 max-lg:px-0 max-sm:fixed max-sm:top-0 max-sm:left-1/2 max-sm:z-50 max-sm:!w-[92%] max-sm:-translate-x-1/2 max-sm:justify-center">
         <div className="max-sm:hidden">
           <LogoBadge size="sm" compact className="mx-auto" />
         </div>

@@ -250,7 +250,11 @@ const formFieldClassName =
   return (
     <div className="flex h-full min-h-0 flex-1 justify-center overflow-y-auto overflow-x-hidden text-[var(--text)] max-xl:h-auto max-xl:min-h-screen max-xl:overflow-visible max-xl:w-full max-lg:py-2 max-sm:pt-20 max-sm:pb-24">
       {about && (
-        <SpotlightShell className="w-full max-w-[1180px] px-6 py-8 sm:px-10 sm:py-12 max-sm:px-4 max-sm:py-5">
+        <SpotlightShell
+          showSparkles
+          sparklesClassName="sparkles-hero-mask opacity-80"
+          className="w-full max-w-[1180px] px-6 py-8 sm:px-10 sm:py-12 max-sm:px-4 max-sm:py-5"
+        >
           <div className="flex h-full min-h-fit w-full items-center justify-between gap-12 max-lg:flex-col-reverse max-lg:items-start max-lg:justify-start max-lg:gap-10 max-sm:gap-6">
             <div className="flex w-full max-w-[560px] flex-col gap-6 max-sm:gap-5">
               <div className="flex flex-wrap items-center gap-3">
@@ -471,7 +475,7 @@ const formFieldClassName =
               return (
                 <div
                   key={item.id}
-                  className="group relative overflow-hidden rounded-[28px] border border-[var(--border)] bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(241,245,249,0.90))] p-5 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-[color:rgba(124,58,237,0.32)] hover:shadow-[0_22px_46px_rgba(124,58,237,0.15)] dark:bg-[linear-gradient(180deg,rgba(17,24,39,0.95),rgba(30,41,59,0.90))] max-sm:rounded-[22px] max-sm:p-4"
+                  className="group relative overflow-hidden rounded-[28px] border border-[var(--border)] bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(241,245,249,0.90))] p-5 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-[color:rgba(124,58,237,0.32)] hover:shadow-[0_22px_46px_rgba(124,58,237,0.15)] max-sm:rounded-[22px] max-sm:p-4"
                 >
                   <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(124,58,237,0.16),transparent_60%)]" />
@@ -505,7 +509,7 @@ const formFieldClassName =
       {
         project &&(
           <div className="flex w-full max-w-[1160px] flex-1 flex-col items-center justify-start gap-10 px-3 py-10 max-lg:w-full max-lg:flex-col max-sm:px-2 max-sm:py-8">
-            <div className="w-full rounded-[32px] border border-[var(--border)] bg-[linear-gradient(135deg,rgba(255,255,255,0.94),rgba(124,58,237,0.06),rgba(255,255,255,0.92))] p-6 shadow-[var(--shadow)] dark:bg-[linear-gradient(135deg,rgba(15,23,42,0.92),rgba(124,58,237,0.10),rgba(17,24,39,0.90))] sm:p-8 max-sm:rounded-[24px] max-sm:p-4">
+            <div className="w-full rounded-[32px] border border-[var(--border)] bg-[linear-gradient(135deg,rgba(255,255,255,0.94),rgba(124,58,237,0.06),rgba(255,255,255,0.92))] p-6 shadow-[var(--shadow)] sm:p-8 max-sm:rounded-[24px] max-sm:p-4">
             <div className="w-full text-left flex flex-col gap-4">
               <h1 className="text-4xl max-sm:text-2xl font-semibold text-gray-600">
                 {[
@@ -548,7 +552,7 @@ const formFieldClassName =
               {
                 projectArray.map((item, index) => {
                   return(
-                    <div key={index} className="group relative flex h-full min-h-[430px] flex-col overflow-hidden rounded-[28px] border border-[var(--border)] bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(241,245,249,0.90))] p-5 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-[color:rgba(124,58,237,0.32)] hover:shadow-[0_28px_60px_rgba(124,58,237,0.16)] dark:bg-[linear-gradient(180deg,rgba(17,24,39,0.95),rgba(30,41,59,0.90))]">
+                    <div key={index} className="group relative flex h-full min-h-[430px] flex-col overflow-hidden rounded-[28px] border border-[var(--border)] bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(241,245,249,0.90))] p-5 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-[color:rgba(124,58,237,0.32)] hover:shadow-[0_28px_60px_rgba(124,58,237,0.16)]">
                       <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(124,58,237,0.18),transparent_58%)]" />
                         <div className="absolute -right-8 top-10 h-28 w-28 rounded-full bg-[color:rgba(124,58,237,0.18)] blur-3xl" />

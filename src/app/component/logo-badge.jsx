@@ -42,7 +42,7 @@ const LogoBadge = ({
         className={`relative flex items-center justify-center border border-[var(--border)] bg-[var(--surface)]/88 shadow-[var(--shadow)] backdrop-blur-xl ${styles.frame}`}
       >
         <div
-          className={`relative flex h-full w-full items-center justify-center overflow-hidden border border-[var(--border)] bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(241,245,249,0.88))] dark:bg-[linear-gradient(180deg,rgba(17,24,39,0.96),rgba(30,41,59,0.88))] ${styles.inner}`}
+          className={`relative flex h-full w-full items-center justify-center overflow-hidden border border-[var(--border)] bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(241,245,249,0.88))] ${styles.inner}`}
         >
           <div className="logo-orbit logo-orbit-a" />
           <div className="logo-orbit logo-orbit-b" />
@@ -54,15 +54,7 @@ const LogoBadge = ({
             width={160}
             height={160}
             priority={false}
-            className={`relative z-10 object-contain dark:hidden ${styles.image}`}
-          />
-          <Image
-            src="/logo2.png"
-            alt="Brand logo"
-            width={160}
-            height={160}
-            priority={false}
-            className={`relative z-10 hidden object-contain dark:block ${styles.image}`}
+            className={`relative z-10 object-contain ${styles.image}`}
           />
         </div>
       </div>

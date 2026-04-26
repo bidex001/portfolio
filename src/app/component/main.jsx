@@ -239,6 +239,14 @@ const projectArray = [
     tools:"react native + tailwindcss + javascript + expo",
     link:"",
     code:"https://github.com/bidex001/math-game"
+  },
+  {
+    name:"chatAi",
+    description:"I built a modern Chat AI application that enables real-time, intelligent conversations between users and an AI-powered assistant",
+    image:"/images/ai.png",
+    tools:"next.js + tailwindcss + javascript + openai api + python + fastApi",
+    link:"https://chat-ai-three-iota.vercel.app/",
+    code:"https://github.com/bidex001/chatAi"
   }
 ];
 
